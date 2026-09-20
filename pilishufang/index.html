@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="霹雳书坊 - 专注于霹雳布袋戏正版电子书刊、剧集图文剧本、角色设定集及衍生周边资讯的在线阅读与收藏平台。提供高清电子版、独家剧本解析与社区互动。">
+    <meta name="keywords" content="霹雳书坊,霹雳布袋戏,霹雳电子书,霹雳剧本,霹雳角色,布袋戏电子刊">
+    <title>霹雳书坊 - 霹雳布袋戏正版电子书刊与剧本阅读平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #8a1c1c; /* 霹雳红 */
+            --secondary-color: #2c3e50; /* 墨色 */
+            --accent-color: #c0392b; /* 强调红 */
+            --bg-color: #f4f4f4;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-light: #666666;
+            --border-radius: 8px;
+            --spacing-unit: 1rem;
+            --max-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 顶部导航 */
+        header {
+            background-color: var(--secondary-color);
+            color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.8);
+            font-weight: 500;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #fff;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .search-box {
+            display: flex;
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+            padding: 5px 10px;
+        }
+
+        .search-box input {
+            background: transparent;
+            border: none;
+            color: #fff;
+            outline: none;
+            width: 150px;
+        }
+
+        .search-box button {
+            background: transparent;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        /* Hero 区域 */
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url('https://picsum.photos/seed/pili/1920/600') no-repeat center center/cover;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 25px;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        /* 分类导航 */
+        .category-nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .cat-tag {
+            padding: 6px 16px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            transition: all 0.2s;
+        }
+
+        .cat-tag:hover, .cat-tag.active {
+            background: var(--primary-color);
+            color: #fff;
+            border-color: var(--primary-color);
+        }
+
+        /* 主要内容区 */
+        .main-content {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        /* 左侧内容列表 */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            color: var(--secondary-color);
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            background-color: #eee;
+        }
+
+        .card-body {
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: var(--secondary-color);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-meta {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .card-tags {
+            margin-top: auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+            background-color: #f0f0f0;
+            color: #666;
+        }
+
+        .tag.hot {
+            background-color: #ffebee;
+            color: var(--primary-color);
+        }
+
+        /* 侧边栏 */
+        aside .widget {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .widget-title {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+            color: var(--secondary-color);
+        }
+
+        .rank-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+
+        .rank-num {
+            width: 24px;
+            height: 24px;
+            line-height: 24px;
+            text-align: center;
+            background-color: #eee;
+            color: #666;
+            border-radius: 50%;
+            margin-right: 10px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .rank-list li:nth-child(1) .rank-num { background: #ff4757; color: #fff; }
+        .rank-list li:nth-child(2) .rank-num { background: #ff6b81; color: #fff; }
+        .rank-list li:nth-child(3) .rank-num { background: #ffa502; color: #fff; }
+
+        .rank-info {
+            flex-grow: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* 剧本详情区 */
+        .script-detail {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            margin-bottom: 2rem;
+        }
+
+        .script-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .script-header h2 {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        .script-meta {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .script-content {
+            font-family: "KaiTi", "楷体", serif;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #2c3e50;
+            text-align: justify;
+        }
+
+        .script-content p {
+            margin-bottom: 1.5rem;
+            text-indent: 2em;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: var(--secondary-color);
+            color: rgba(255,255,255,0.6);
+            padding: 40px 0 20px;
+            margin-top: auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-col h3 {
+            color: #fff;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.85rem;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* 简化处理，移动端隐藏菜单 */
+            }
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            .hero {
+                height: 300px;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .grid-layout {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 480px) {
+            .grid-layout {
+                grid-template-columns: 1fr;
+            }
+            .logo span {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                </svg>
+                <span>霹雳书坊</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#" class="active">首页</a>
+                <a href="#">电子书刊</a>
+                <a href="#">剧本精选</a>
+                <a href="#">角色图鉴</a>
+                <a href="#">同人创作</a>
+                <a href="#">关于书坊</a>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="搜索剧名、角色...">
+                <button>🔍</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>霹雳书坊</h1>
+            <p>汇聚霹雳布袋戏正版电子书刊、独家剧本与深度角色解析，打造云端阅读与收藏圣地。</p>
+            <a href="#latest" class="btn btn-primary">开始阅读</a>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="category-nav">
+            <a href="#" class="cat-tag active">全部</a>
+            <a href="#" class="cat-tag">霹雳惊鸿</a>
+            <a href="#" class="cat-tag">霹雳魔界</a>
+            <a href="#" class="cat-tag">霹雳神州</a>
+            <a href="#" class="cat-tag">霹雳天命</a>
+            <a href="#" class="cat-tag">霹雳狼烟</a>
+            <a href="#" class="cat-tag">霹雳开疆</a>
+            <a href="#" class="cat-tag">霹雳战元</a>
+        </div>
+
+        <main class="main-content" id="latest">
+            <!-- 左侧：书刊列表 -->
+            <div class="content-area">
+                <div class="section-header">
+                    <h2 class="section-title">最新上架书刊</h2>
+                    <a href="#" style="color: var(--primary-color); font-size: 0.9rem;">查看更多 &raquo;</a>
+                </div>
+                
+                <div class="grid-layout">
+                    <!-- Card 1 -->
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/pili1/400/500" alt="霹雳狂刀之刀剑争锋" class="card-img">
+                        <div class="card-body">
+                            <h3 class="card-title">霹雳狂刀之刀剑争锋 电子刊 (第01期)</h3>
+                            <div class="card-meta">
+                                <span>2023-10-15</span>
+                                <span>PDF高清</span>
+                            </div>
+                            <div class="card-tags">
+                                <span class="tag hot">热门</span>
+                                <span class="tag">经典</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 2 -->
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/pili2/400/500" alt="霹雳烽火录" class="card-img">
+                        <div class="card-body">
+                            <h3 class="card-title">霹雳烽火录 电视原声带与剧本选摘</h3>
+                            <div class="card-meta">
+                                <span>2023-10-18</span>
+                                <span>EPUB/MOBI</span>
+                            </div>
+                            <div class="card-tags">
+                                <span class="tag">音乐</span>
+                                <span class="tag">剧本</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 3 -->
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/pili3/400/500" alt="霹雳紫冥府" class="card-img">
+                        <div class="card-body">
+                            <h3 class="card-title">霹雳紫冥府 角色设定集 (完整版)</h3>
+                            <div class="card-meta">
+                                <span>2023-10-20</span>
+                                <span>高清图集</span>
+                            </div>
+                            <div class="card-tags">
+                                <span class="tag">设定</span>
+                                <span class="tag">图鉴</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 4 -->
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/pili4/400/500" alt="霹雳九皇座" class="card-img">
+                        <div class="card-body">
+                            <h3 class="card-title">霹雳九皇座 独家番外篇</h3>
+                            <div class="card-meta">
+                                <span>2023-10-22</span>
+                                <span>连载中</span>
+                            </div>
+                            <div class="card-tags">
+                                <span class="tag">番外</span>
+                                <span class="tag">连载</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="section-header" style="margin-top: 3rem;">
+                    <h2 class="section-title">精选剧本赏析</h2>
+                </div>
+
+                <div class="script-detail">
+                    <div class="script-header">
+                        <h2>素还真 · 风云际会篇</h2>
+                        <div class="script-meta">来源：霹雳谜城之万古刀剧本集 &nbsp;|&nbsp; 作者：黄文择</div>
+                    </div>
+                    <div class="script-content">
+                        <p>素还真立于悬崖之畔，手中折扇轻摇，目光如炬，望向远方迷雾。此时，狂风骤起，卷起漫天落叶，仿佛预示着一场腥风血雨即将来临。他深知，江湖路远，人心难测，唯有以智谋化解万难。</p>
+                        <p>「今夜月色虽好，却掩不住这世间的杀机。」素还真能言善道，语调平缓却暗藏机锋。对面的魔魁虽然气势汹汹，但在素还真步步为营的言语攻势下，心中也不免生出一丝忌惮。</p>
+                        <p>这一场智斗，不仅是实力的较量，更是心境的比拼。素还真是如何在这千钧一发之际，扭转乾坤，化险为夷？且听下回分解。</p>
+                    </div>
+                    <div style="text-align: center; margin-top: 20px;">
+                        <a href="#" class="btn btn-primary">阅读完整剧本</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 右侧：侧边栏 -->
+            <aside>
+                <!-- 排行榜 -->
+                <div class="widget">
+                    <h3 class="widget-title">本月热门书刊</h3>
+                    <ul class="rank-list">
+                        <li>
+                            <span class="rank-num">1</span>
+                            <span class="rank-info">霹雳劫之末路皇朝 电子刊</span>
+                        </li>
+                        <li>
+                            <span class="rank-num">2</span>
+                            <span class="rank-info">霹雳皇朝之龙城圣影 剧本选</span>
+                        </li>
+                        <li>
+                            <span class="rank-num">3</span>
+                            <span class="rank-info">霹雳奇兵之魔兵记 角色卡</span>
+                        </li>
+                        <li>
+                            <span class="rank-num">4</span>
+                            <span class="rank-info">霹雳烽火录 设定集</span>
+                        </li>
+                        <li>
+                            <span class="rank-num">5</span>
+                            <span class="rank-info">霹雳剑踪 官方同人小说</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 热门标签 -->
+                <div class="widget">
+                    <h3 class="widget-title">热门标签</h3>
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                        <a href="#" class="cat-tag">素还真</a>
+                        <a href="#" class="cat-tag">一页书</a>
+                        <a href="#" class="cat-tag">叶小钗</a>
+                        <a href="#" class="cat-tag">秦假仙</a>
+                        <a href="#" class="cat-tag">魔佛波旬</a>
+                        <a href="#" class="cat-tag">素续缘</a>
+                        <a href="#" class="cat-tag">傲笑红尘</a>
+                        <a href="#" class="cat-tag">六祸苍龙</a>
+                    </div>
+                </div>
+
+                <!-- 公告 -->
+                <div class="widget">
+                    <h3 class="widget-title">书坊公告</h3>
+                    <div style="font-size: 0.9rem; color: #666;">
+                        <p style="margin-bottom: 10px;">📢 <strong>更新通知：</strong>《霹雳魔纪》第05期已上传。</p>
+                        <p style="margin-bottom: 10px;">📢 <strong>维护公告：</strong>本周日凌晨2点进行服务器维护。</p>
+                        <p>📢 <strong>投稿指南：</strong>欢迎各位同好投稿原创霹雳同人小说。</p>
+                    </div>
+                </div>
+            </aside>
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>关于霹雳书坊</h3>
+                    <p style="font-size: 0.9rem; line-height: 1.6;">
+                        霹雳书坊是一个致力于霹雳布袋戏文化传承与推广的在线阅读平台。我们提供正版电子书刊、高清剧本解析以及丰富的角色图鉴资料，旨在为霹雳迷提供一个交流与收藏的数字化家园。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h3>快速链接</h3>
+                    <ul>
+                        <li><a href="#">电子书库</a></li>
+                        <li><a href="#">剧本赏析</a></li>
+                        <li><a href="#">角色图鉴</a></li>
+                        <li><a href="#">周边商城</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>帮助中心</h3>
+                    <ul>
+                        <li><a href="#">使用指南</a></li>
+                        <li><a href="#">版权声明</a></li>
+                        <li><a href="#">联系我们</a></li>
+                        <li><a href="#">加入书坊</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 霹雳书坊. All Rights Reserved. 本站内容仅供个人学习交流使用，请支持正版霹雳布袋戏。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+              </html>
