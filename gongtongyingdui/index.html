@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="全球性问题应对指南 - 深度解析气候变化、公共卫生、资源短缺等全球性挑战，提供科学解决方案、国际合作趋势及个人行动建议。">
+    <meta name="keywords" content="共同应对全球性问题,气候变化,可持续发展,国际合作,全球挑战">
+    <title>全球性问题应对指南 - 深度解析与科学方案</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --accent-hover: #2980b9;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .btn-subscribe {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .btn-subscribe:hover {
+            background-color: var(--accent-hover);
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn-hero {
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: white;
+            color: #1a2a6c;
+        }
+
+        .btn-primary:hover {
+            background-color: #f0f0f0;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Main Container */
+        .main-container {
+            max-width: var(--container-width);
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        /* Section Titles */
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Problem Grid */
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .problem-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+            border-top: 4px solid var(--accent-color);
+        }
+
+        .problem-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .problem-icon {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+
+        .problem-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .problem-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .problem-card ul {
+            padding-left: 20px;
+        }
+
+        .problem-card li {
+            list-style-type: disc;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        /* Solutions Section */
+        .solutions-section {
+            background-color: white;
+            padding: 60px 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .solutions-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .solutions-content h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .solutions-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .solution-item {
+            display: flex;
+            gap: 15px;
+        }
+
+        .solution-number {
+            background-color: var(--accent-color);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .solution-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+
+        .solution-text p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .solutions-image {
+            width: 100%;
+            height: 400px;
+            background-color: #eee;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .solutions-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Actionable Advice */
+        .advice-section {
+            margin-top: 80px;
+        }
+
+        .advice-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .advice-card {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .advice-card h3 {
+            margin: 15px 0 10px;
+            color: var(--primary-color);
+        }
+
+        .advice-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 60px 20px 20px;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #bdc3c7;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: #bdc3c7;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 15px;
+            }
+
+            nav ul {
+                margin-top: 15px;
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .solutions-container {
+                grid-template-columns: 1fr;
+            }
+
+            .solutions-image {
+                height: 250px;
+                order: -1;
+            }
+
+            .advice-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <span>🌍</span> 全球挑战应对中心
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#problems" class="active">核心挑战</a></li>
+                    <li><a href="#solutions">科学方案</a></li>
+                    <li><a href="#action">个人行动</a></li>
+                    <li><a href="#resources">资源中心</a></li>
+                </ul>
+            </nav>
+            <a href="#subscribe" class="btn-subscribe">获取最新报告</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>共同应对全球性问题<br>构建可持续的未来</h1>
+            <p>面对气候变化、资源枯竭与公共卫生危机，人类命运休戚与共。探索科学解决方案，了解国际合作机制，从认知到行动，我们在此。</p>
+            <div class="hero-actions">
+                <button class="btn-hero btn-primary">了解现状</button>
+                <button class="btn-hero btn-outline">加入行动</button>
+            </div>
+        </div>
+    </section>
+
+    <main class="main-container">
+        
+        <!-- 核心挑战板块 -->
+        <section id="problems">
+            <div class="section-header">
+                <h2>当前面临的全球性挑战</h2>
+                <p>这些问题跨越国界，需要全人类协同努力才能有效解决。</p>
+            </div>
+            <div class="problems-grid">
+                <article class="problem-card">
+                    <div class="problem-icon">🌡️</div>
+                    <h3>气候变化与极端天气</h3>
+                    <p>全球平均气温持续上升，导致冰川融化、海平面上升以及更频繁的极端天气事件，威胁生态系统和人类居住安全。</p>
+                    <ul>
+                        <li>全球升温突破1.5°C警戒线</li>
+                        <li>生物多样性丧失加速</li>
+                        <li>粮食安全面临威胁</li>
+                    </ul>
+                </article>
+
+                <article class="problem-card">
+                    <div class="problem-icon">🤒</div>
+                    <h3>公共卫生危机</h3>
+                    <p>新发传染病和抗生素耐药性成为全球健康的主要威胁，跨国传播速度快，对医疗体系构成巨大压力。</p>
+                    <ul>
+                        <li>全球卫生治理体系待完善</li>
+                        <li>疫苗分配不均问题</li>
+                        <li>慢性病负担加重</li>
+                    </ul>
+                </article>
+
+                <article class="problem-card">
+                    <div class="problem-icon">💧</div>
+                    <h3>资源短缺与环境退化</h3>
+                    <p>淡水资源短缺、土壤退化以及塑料污染正在侵蚀地球的承载力，影响数亿人的生活质量。</p>
+                    <ul>
+                        <li>清洁饮用水获取困难</li>
+                        <li>海洋塑料污染治理</li>
+                        <li>能源转型压力</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <!-- 科学方案板块 -->
+        <section id="solutions">
+            <div class="solutions-section">
+                <div class="solutions-container">
+                    <div class="solutions-image">
+                        <img src="https://picsum.photos/seed/solutions/600/400" alt="国际合作与绿色能源">
+                    </div>
+                    <div class="solutions-content">
+                        <h2>协同治理与科技创新</h2>
+                        <p style="margin-bottom: 30px; color: var(--text-secondary);">应对全球性问题不能仅靠单一国家的努力，必须建立基于科学依据的国际合作框架，并推动技术创新。</p>
+                        <div class="solutions-list">
+                            <div class="solution-item">
+                                <div class="solution-number">1</div>
+                                <div class="solution-text">
+                                    <h4>加强国际合作机制</h4>
+                                    <p>通过联合国及各类国际组织，建立透明的数据共享机制和危机响应协议，确保各国在政策制定和执行上步调一致。</p>
+                                </div>
+                            </div>
+                            <div class="solution-item">
+                                <div class="solution-number">2</div>
+                                <div class="solution-text">
+                                    <h4>推动能源绿色转型</h4>
+                                    <p>加速从化石能源向可再生能源（太阳能、风能、核聚变）的过渡，制定碳中和时间表，发展碳捕集技术。</p>
+                                </div>
+                            </div>
+                            <div class="solution-item">
+                                <div class="solution-number">3</div>
+                                <div class="solution-text">
+                                    <h4>建立韧性城市系统</h4>
+                                    <p>城市规划需考虑气候变化因素，建设防洪排涝设施，优化交通网络，提高城市在突发公共事件下的生存能力。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 个人行动板块 -->
+        <section id="action" class="advice-section">
+            <div class="section-header">
+                <h2>从个人到集体的行动指南</h2>
+                <p>个人的微小改变汇聚起来，就是推动全球变革的巨大力量。</p>
+            </div>
+            <div class="advice-grid">
+                <div class="advice-card">
+                    <div style="font-size: 3rem;">🌱</div>
+                    <h3>绿色生活方式</h3>
+                    <p>减少一次性塑料使用，践行垃圾分类，选择低碳出行，节约水电资源。</p>
+                </div>
+                <div class="advice-card">
+                    <div style="font-size: 3rem;">📚</div>
+                    <h3>提升环保意识</h3>
+                    <p>持续关注权威科学报告，了解气候变化真相，通过社交媒体传播正确的环保理念。</p>
+                </div>
+                <div class="advice-card">
+                    <div style="font-size: 3rem;">🤝</div>
+                    <h3>参与社区实践</h3>
+                    <p>加入当地的环保组织或志愿者团队，参与植树造林、河流清理等公益活动。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 常见问题板块 -->
+        <section style="margin-top: 80px;">
+            <div class="section-header">
+                <h2>常见问题解答</h2>
+            </div>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <details style="background: white; padding: 20px; margin-bottom: 15px; border-radius: 8px; box-shadow: var(--shadow); cursor: pointer;">
+                    <summary style="font-weight: 600; color: var(--primary-color);">普通人对气候变化能做些什么？</summary>
+                    <p style="margin-top: 10px; color: var(--text-secondary);">即使作为个人，通过改变饮食习惯（减少肉类摄入）、选择公共交通、节约能源以及支持环保企业，都能显著减少碳足迹。</p>
+                </details>
+                <details style="background: white; padding: 20px; margin-bottom: 15px; border-radius: 8px; box-shadow: var(--shadow); cursor: pointer;">
+                    <summary style="font-weight: 600; color: var(--primary-color);">全球性问题如何通过国际合作解决？</summary>
+                    <p style="margin-top: 10px; color: var(--text-secondary);">国际合作主要通过制定国际公约（如《巴黎协定》）、建立多边援助机制、共享科研数据以及协调跨国执法来实现。</p>
+                </details>
+                <details style="background: white; padding: 20px; margin-bottom: 15px; border-radius: 8px; box-shadow: var(--shadow); cursor: pointer;">
+                    <summary style="font-weight: 600; color: var(--primary-color);">什么是可持续发展目标（SDGs）？</summary>
+                    <p style="margin-top: 10px; color: var(--text-secondary);">可持续发展目标是由联合国制定的17个全球目标，旨在消除贫困、保护地球并确保所有人享有和平与繁荣。</p>
+                </details>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="subscribe">
+        <div class="footer-content">
+            <div class="footer-col">
+                <div class="logo" style="color: white; margin-bottom: 20px;">
+                    <span>🌍</span> 全球挑战应对中心
+                </div>
+                <p style="color: #bdc3c7; font-size: 0.9rem;">
+                    致力于提供全球性问题的权威解读与行动指南，连接科学与公众，共同守护地球家园。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>核心议题</h4>
+                <ul>
+                    <li><a href="#">气候变化</a></li>
+                    <li><a href="#">公共卫生</a></li>
+                    <li><a href="#">环境保护</a></li>
+                    <li><a href="#">可持续发展</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>行动资源</h4>
+                <ul>
+                    <li><a href="#">环保工具包</a></li>
+                    <li><a href="#">志愿者招募</a></li>
+                    <li><a href="#">数据报告</a></li>
+                    <li><a href="#">联系我们</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 全球挑战应对中心. 保留所有权利. 本网站内容仅供参考，旨在普及科学知识。</p>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的平滑滚动脚本
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // 简单的导航栏滚动效果
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = "0 4px 12px rgba(0,0,0,0.1)";
+            } else {
+                header.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.05)";
+            }
+        });
+    </script>
+</body>
+</html>
